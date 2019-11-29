@@ -1,5 +1,5 @@
-# Hello World Example
+# ESP-IDF OTA signed builds bug example
 
-Starts a FreeRTOS task to print "Hello World"
+The build won't complete with Secure Features - > Require Signed App Images & Verify app signature on update enabled with ESP-IDF 3.3. I need to use 3.3 because Arduino-ESP32 doesn't support any later versions.
 
-See the README.md file in the upper level 'examples' directory for more information about examples.
+This example does not include the arduino-esp32 library though. It breaks as soon as esp_ota_set_boot_partition() is included, which should be required for OTA updates. 
